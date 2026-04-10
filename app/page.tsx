@@ -2,505 +2,232 @@ export default function Page() {
   return (
     <main
       style={{
-        background: "#000000",
-        color: "#ffffff",
+        background: "#000",
+        color: "#fff",
         minHeight: "100vh",
         fontFamily:
-          'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+          'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        overflowX: "hidden",
       }}
     >
-      <section
-        style={{
-          maxWidth: 1180,
-          margin: "0 auto",
-          padding: "28px 20px 88px",
-        }}
-      >
+      {/* HERO */}
+      <section style={{ padding: "28px 18px 60px", maxWidth: 520, margin: "0 auto" }}>
         <div
           style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 10,
-            padding: "10px 16px",
+            display: "inline-block",
+            padding: "8px 14px",
             borderRadius: 999,
-            border: "1px solid rgba(255,255,255,0.1)",
-            background: "rgba(255,255,255,0.02)",
-            boxShadow: "0 0 0 1px rgba(255,255,255,0.02) inset",
-            fontSize: 12,
-            fontWeight: 800,
-            letterSpacing: "0.14em",
+            border: "1px solid rgba(255,255,255,0.12)",
+            background: "rgba(255,255,255,0.04)",
+            fontSize: 11,
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.72)",
-            marginBottom: 28,
+            marginBottom: 22,
           }}
         >
-          <span
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: 999,
-              background: "#ffffff",
-              boxShadow: "0 0 18px rgba(255,255,255,0.85)",
-            }}
-          />
-          Built for growth, not editing
+          Content engine
         </div>
 
-        <div
+        <h1
           style={{
-            display: "grid",
-            gridTemplateColumns: "1.05fr 0.95fr",
-            gap: 28,
-            alignItems: "center",
+            fontSize: 44,
+            lineHeight: 1.05,
+            letterSpacing: "-0.04em",
+            margin: 0,
+            fontWeight: 800,
           }}
         >
-          <div>
-            <h1
-              style={{
-                margin: 0,
-                fontSize: "clamp(46px, 8vw, 96px)",
-                lineHeight: 0.94,
-                letterSpacing: "-0.06em",
-                fontWeight: 800,
-                maxWidth: 760,
-              }}
-            >
-              Turn one video
-              <br />
-              into more reach
-            </h1>
+          One video.
+          <br />
+          Infinite content.
+        </h1>
 
-            <p
-              style={{
-                margin: "24px 0 0",
-                maxWidth: 680,
-                fontSize: "clamp(20px, 3vw, 28px)",
-                lineHeight: 1.34,
-                color: "rgba(255,255,255,0.72)",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Upload once. Clip, caption, and format your content faster so you
-              can publish more without burning hours inside an editor.
-            </p>
+        <p
+          style={{
+            marginTop: 18,
+            fontSize: 18,
+            lineHeight: 1.5,
+            color: "rgba(255,255,255,0.7)",
+          }}
+        >
+          Turn raw footage into high-performing clips without wasting hours editing.
+        </p>
 
+        <div style={{ marginTop: 26, display: "flex", flexDirection: "column", gap: 12 }}>
+          <button
+            style={{
+              padding: "16px",
+              borderRadius: 14,
+              background: "#fff",
+              color: "#000",
+              fontWeight: 700,
+              border: "none",
+            }}
+          >
+            Start Free
+          </button>
+
+          <button
+            style={{
+              padding: "16px",
+              borderRadius: 14,
+              background: "rgba(255,255,255,0.05)",
+              color: "#fff",
+              border: "1px solid rgba(255,255,255,0.12)",
+            }}
+          >
+            Watch Demo
+          </button>
+        </div>
+      </section>
+
+      {/* FLOATING CARDS */}
+      <section style={{ padding: "10px 18px 70px", maxWidth: 520, margin: "0 auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {["Hook clip", "Caption clip", "Platform cut"].map((text, i) => (
             <div
+              key={i}
               style={{
-                display: "flex",
-                gap: 14,
-                flexWrap: "wrap",
-                marginTop: 30,
-              }}
-            >
-              <button
-                style={{
-                  padding: "18px 30px",
-                  borderRadius: 16,
-                  border: "1px solid rgba(255,255,255,0.18)",
-                  background: "#ffffff",
-                  color: "#000000",
-                  fontWeight: 800,
-                  fontSize: 16,
-                  letterSpacing: "-0.02em",
-                  boxShadow: "0 10px 40px rgba(255,255,255,0.12)",
-                  cursor: "pointer",
-                }}
-              >
-                Start Free
-              </button>
-
-              <button
-                style={{
-                  padding: "18px 30px",
-                  borderRadius: 16,
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  background: "rgba(255,255,255,0.02)",
-                  color: "#ffffff",
-                  fontWeight: 700,
-                  fontSize: 16,
-                  letterSpacing: "-0.02em",
-                  boxShadow: "0 0 0 1px rgba(255,255,255,0.02) inset",
-                  cursor: "pointer",
-                }}
-              >
-                Watch Demo
-              </button>
-            </div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                gap: 14,
-                marginTop: 34,
-              }}
-            >
-              {[
-                ["More output", "Turn one recording into multiple publishable assets."],
-                ["Less friction", "Move faster without living in a timeline editor."],
-                ["More surface area", "Show up more often across modern short-form channels."],
-              ].map(([title, desc], i) => (
-                <div
-                  key={i}
-                  style={{
-                    borderRadius: 18,
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    background: "rgba(255,255,255,0.02)",
-                    padding: 18,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 760,
-                      lineHeight: 1.05,
-                      marginBottom: 10,
-                    }}
-                  >
-                    {title}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 14,
-                      lineHeight: 1.5,
-                      color: "rgba(255,255,255,0.62)",
-                    }}
-                  >
-                    {desc}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <div
-              style={{
-                borderRadius: 28,
+                padding: "22px",
+                borderRadius: 20,
+                background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.1)",
-                background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015))",
-                boxShadow:
-                  "0 0 0 1px rgba(255,255,255,0.02) inset, 0 28px 80px rgba(0,0,0,0.55)",
-                padding: 16,
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  gap: 8,
-                  marginBottom: 14,
-                }}
-              >
-                <span
-                  style={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: 999,
-                    background: "rgba(255,255,255,0.35)",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: 999,
-                    background: "rgba(255,255,255,0.2)",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: 999,
-                    background: "rgba(255,255,255,0.12)",
-                  }}
-                />
-              </div>
-
-              <div
-                style={{
-                  display: "grid",
-                  gap: 12,
-                }}
-              >
-                <div
-                  style={{
-                    minHeight: 220,
-                    borderRadius: 22,
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    background:
-                      "linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
-                    padding: 18,
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "inline-flex",
-                      padding: "8px 12px",
-                      borderRadius: 999,
-                      background: "rgba(0,0,0,0.5)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      fontSize: 12,
-                      fontWeight: 700,
-                    }}
-                  >
-                    Original upload
-                  </div>
-
-                  <div
-                    style={{
-                      position: "absolute",
-                      right: 18,
-                      top: 18,
-                      padding: "8px 12px",
-                      borderRadius: 999,
-                      background: "#ffffff",
-                      color: "#000000",
-                      fontSize: 12,
-                      fontWeight: 800,
-                    }}
-                  >
-                    42 min
-                  </div>
-
-                  <div
-                    style={{
-                      position: "absolute",
-                      left: 18,
-                      right: 18,
-                      bottom: 18,
-                      padding: 16,
-                      borderRadius: 18,
-                      background: "rgba(0,0,0,0.56)",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontSize: 15,
-                        fontWeight: 760,
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      One long-form upload becomes multiple short-form assets.
-                    </div>
-                    <div
-                      style={{
-                        fontSize: 13,
-                        lineHeight: 1.5,
-                        color: "rgba(255,255,255,0.62)",
-                        marginTop: 8,
-                      }}
-                    >
-                      Faster clipping, cleaner captions, and quicker publishing.
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                    gap: 12,
-                  }}
-                >
-                  {[
-                    ["Output 1", "Hook clip"],
-                    ["Output 2", "Caption clip"],
-                    ["Output 3", "Platform clip"],
-                  ].map(([kicker, label], i) => (
-                    <div
-                      key={i}
-                      style={{
-                        minHeight: 120,
-                        borderRadius: 18,
-                        border: "1px solid rgba(255,255,255,0.08)",
-                        background:
-                          "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015))",
-                        padding: 16,
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <div
-                        style={{
-                          fontSize: 12,
-                          letterSpacing: "0.12em",
-                          textTransform: "uppercase",
-                          color: "rgba(255,255,255,0.56)",
-                          fontWeight: 700,
-                        }}
-                      >
-                        {kicker}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: 22,
-                          fontWeight: 780,
-                          lineHeight: 1.02,
-                          letterSpacing: "-0.04em",
-                        }}
-                      >
-                        {label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div
-              style={{
-                marginTop: 16,
-                borderRadius: 24,
-                border: "1px solid rgba(255,255,255,0.08)",
-                background: "rgba(255,255,255,0.02)",
-                padding: 22,
+                backdropFilter: "blur(12px)",
+                boxShadow: "0 10px 40px rgba(0,0,0,0.6)",
+                transform: `translateY(${i * 6}px)`,
               }}
             >
               <div
                 style={{
                   fontSize: 12,
-                  letterSpacing: "0.14em",
+                  opacity: 0.5,
+                  marginBottom: 6,
+                  letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.54)",
-                  fontWeight: 700,
-                  marginBottom: 12,
                 }}
               >
-                What changes
+                Output {i + 1}
               </div>
 
-              <h3
-                style={{
-                  margin: 0,
-                  fontSize: 34,
-                  lineHeight: 0.98,
-                  letterSpacing: "-0.05em",
-                  fontWeight: 800,
-                }}
-              >
-                Less editing.
-                <br />
-                More output.
-              </h3>
-
-              <p
-                style={{
-                  margin: "14px 0 0",
-                  fontSize: 15,
-                  lineHeight: 1.6,
-                  color: "rgba(255,255,255,0.66)",
-                }}
-              >
-                This is not just a clipper. It is a faster path from raw content
-                to more publishable assets.
-              </p>
+              <div style={{ fontSize: 22, fontWeight: 700 }}>{text}</div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section
-        style={{
-          maxWidth: 1180,
-          margin: "0 auto",
-          padding: "0 20px 110px",
-        }}
-      >
+      {/* PROBLEM */}
+      <section style={{ padding: "0 18px 70px", maxWidth: 520, margin: "0 auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          {[
+            "Editing eats your time",
+            "Content dies after one post",
+            "You’re not showing up enough",
+          ].map((text, i) => (
+            <div
+              key={i}
+              style={{
+                padding: "18px",
+                borderRadius: 16,
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(255,255,255,0.02)",
+              }}
+            >
+              {text}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TRANSFORMATION */}
+      <section style={{ padding: "0 18px 80px", maxWidth: 520, margin: "0 auto" }}>
         <div
           style={{
-            borderRadius: 30,
-            border: "1px solid rgba(255,255,255,0.1)",
-            background:
-              "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015))",
-            boxShadow:
-              "0 0 0 1px rgba(255,255,255,0.02) inset, 0 26px 80px rgba(0,0,0,0.55)",
-            padding: "36px 24px",
+            padding: 24,
+            borderRadius: 24,
+            border: "1px solid rgba(255,255,255,0.12)",
+            background: "rgba(255,255,255,0.04)",
             textAlign: "center",
           }}
         >
-          <div
-            style={{
-              fontSize: 12,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.52)",
-              fontWeight: 700,
-              marginBottom: 16,
-            }}
-          >
-            The point
-          </div>
-
-          <h2
-            style={{
-              margin: 0,
-              fontSize: "clamp(34px, 6vw, 72px)",
-              lineHeight: 0.98,
-              letterSpacing: "-0.06em",
-              fontWeight: 820,
-            }}
-          >
-            Editing is a bottleneck.
+          <h2 style={{ margin: 0, fontSize: 28, lineHeight: 1.2 }}>
+            Record once.
             <br />
-            Distribution is leverage.
+            Publish everywhere.
           </h2>
 
-          <p
-            style={{
-              maxWidth: 760,
-              margin: "22px auto 0",
-              fontSize: "clamp(18px, 3vw, 24px)",
-              lineHeight: 1.45,
-              color: "rgba(255,255,255,0.7)",
-            }}
-          >
-            The creators who grow are the ones who publish more consistently,
-            faster, and with less friction between recording and distribution.
+          <p style={{ marginTop: 14, color: "rgba(255,255,255,0.7)" }}>
+            One input becomes multiple outputs ready for distribution.
           </p>
+        </div>
+      </section>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: 14,
-              flexWrap: "wrap",
-              marginTop: 30,
-            }}
-          >
-            <button
+      {/* WHY */}
+      <section style={{ padding: "0 18px 80px", maxWidth: 520, margin: "0 auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {[
+            ["Speed", "Go from raw to ready in minutes"],
+            ["Scale", "Multiply every piece of content"],
+            ["Consistency", "Show up daily without burnout"],
+          ].map(([title, desc], i) => (
+            <div
+              key={i}
               style={{
-                padding: "18px 32px",
-                borderRadius: 16,
-                border: "1px solid rgba(255,255,255,0.18)",
-                background: "#ffffff",
-                color: "#000000",
-                fontWeight: 800,
-                fontSize: 16,
-                cursor: "pointer",
+                padding: "20px",
+                borderRadius: 18,
+                border: "1px solid rgba(255,255,255,0.1)",
+                background: "rgba(255,255,255,0.03)",
               }}
             >
-              Start Clipping Smarter
+              <div style={{ fontWeight: 700, marginBottom: 6 }}>{title}</div>
+              <div style={{ fontSize: 14, color: "rgba(255,255,255,0.6)" }}>
+                {desc}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section style={{ padding: "0 18px 100px", maxWidth: 520, margin: "0 auto" }}>
+        <div
+          style={{
+            padding: 26,
+            borderRadius: 26,
+            border: "1px solid rgba(255,255,255,0.12)",
+            background: "rgba(255,255,255,0.05)",
+            textAlign: "center",
+          }}
+        >
+          <h2 style={{ margin: 0, fontSize: 30, lineHeight: 1.2 }}>
+            Stop editing.
+            <br />
+            Start scaling.
+          </h2>
+
+          <div style={{ marginTop: 20, display: "flex", flexDirection: "column", gap: 12 }}>
+            <button
+              style={{
+                padding: "16px",
+                borderRadius: 14,
+                background: "#fff",
+                color: "#000",
+                fontWeight: 700,
+                border: "none",
+              }}
+            >
+              Start Now
             </button>
 
             <button
               style={{
-                padding: "18px 32px",
-                borderRadius: 16,
-                border: "1px solid rgba(255,255,255,0.1)",
-                background: "rgba(255,255,255,0.02)",
-                color: "#ffffff",
-                fontWeight: 700,
-                fontSize: 16,
-                cursor: "pointer",
+                padding: "16px",
+                borderRadius: 14,
+                background: "transparent",
+                border: "1px solid rgba(255,255,255,0.2)",
+                color: "#fff",
               }}
             >
-              See How It Works
+              See Product
             </button>
           </div>
         </div>
