@@ -1,1 +1,36 @@
+name: Auto Commit System
 
+on:
+  workflow_dispatch:
+    inputs:
+      file_path:
+        description: "File path to update (e.g. app/page.tsx)"
+        required: true
+      commit_message:
+        description: "Commit message"
+        required: true
+      content:
+        description: "Full file content"
+        required: true
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Write file
+        run: |
+          echo "${{ github.event.inputs.content }}" > ${{ github.event.inputs.file_path }}
+
+      - name: Commit changes
+        run: |
+          git config user.name "auto-bot"
+          git config user.email "auto@bot.com"
+          git add .
+          git commit -m "${{ github.event.inputs.commit_message }}" || echo "No changes"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
