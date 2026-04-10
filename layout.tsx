@@ -1,7 +1,7 @@
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body style={{ margin:0, background:"#020617", color:"white", fontFamily:"Inter, sans-serif" }}>
+      <body style={{ margin: 0, background: "#020617", color: "white", fontFamily: "Inter, sans-serif" }}>
         {children}
       </body>
     </html>
