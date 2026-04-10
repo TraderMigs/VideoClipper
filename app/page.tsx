@@ -1,97 +1,136 @@
 export default function Page() {
   return (
-    <main style={{
-      minHeight: "100vh",
-      background: "radial-gradient(circle at 20% 20%, #0f172a, #020617)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontFamily: "system-ui, sans-serif",
-      color: "white"
-    }}>
-      <div style={{
-        width: "100%",
-        maxWidth: "1100px",
-        padding: "40px",
-        borderRadius: "24px",
-        backdropFilter: "blur(20px)",
-        background: "rgba(15, 23, 42, 0.6)",
-        border: "1px solid rgba(255,255,255,0.08)",
-        boxShadow: "0 0 80px rgba(0,0,0,0.6)"
-      }}>
-        
-        <div style={{display:"flex", justifyContent:"space-between", gap:"40px", flexWrap:"wrap"}}>
+    <main
+      style={{
+        background: "#020617",
+        color: "white",
+        minHeight: "100vh",
+        padding: "40px 20px",
+        fontFamily: "Inter, sans-serif",
+      }}
+    >
+      <section style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
+        <h1
+          style={{
+            fontSize: "48px",
+            fontWeight: 700,
+            lineHeight: 1.2,
+            marginBottom: 20,
+          }}
+        >
+          Turn One Video Into 10+ Viral Clips Automatically
+        </h1>
 
-          {/* LEFT */}
-          <div style={{flex:1, minWidth:"280px"}}>
-            <div style={{
-              display:"inline-block",
-              padding:"6px 12px",
-              borderRadius:"999px",
-              background:"rgba(255,255,255,0.08)",
-              fontSize:"12px",
-              marginBottom:"16px"
-            }}>
-              DARK • REAL PRODUCT • NO TOYS
-            </div>
+        <p
+          style={{
+            fontSize: "20px",
+            color: "#94a3b8",
+            marginBottom: 30,
+          }}
+        >
+          Upload once. We detect the best moments, add captions, and format for TikTok, Reels, and Shorts.
+        </p>
 
-            <h1 style={{fontSize:"48px", marginBottom:"12px"}}>
-              VideoClipper
-            </h1>
+        <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
+          <button
+            style={{
+              padding: "14px 28px",
+              borderRadius: 8,
+              background: "#6366f1",
+              border: "none",
+              color: "white",
+              fontSize: 16,
+              cursor: "pointer",
+            }}
+          >
+            Start Clipping
+          </button>
 
-            <p style={{opacity:0.7, marginBottom:"24px"}}>
-              Upload one long video. Get real clips that actually perform.
-              Fix captions. Download. Done.
-            </p>
-
-            <div style={{display:"flex", gap:"12px"}}>
-              <button style={{
-                padding:"12px 18px",
-                borderRadius:"10px",
-                border:"none",
-                background:"linear-gradient(135deg,#6366f1,#06b6d4)",
-                color:"white",
-                fontWeight:"600",
-                cursor:"pointer"
-              }}>
-                Start now
-              </button>
-
-              <button style={{
-                padding:"12px 18px",
-                borderRadius:"10px",
-                border:"1px solid rgba(255,255,255,0.2)",
-                background:"transparent",
-                color:"white",
-                cursor:"pointer"
-              }}>
-                Log in
-              </button>
-            </div>
-          </div>
-
-          {/* RIGHT */}
-          <div style={{flex:1, minWidth:"280px"}}>
-            <div style={{
-              padding:"20px",
-              borderRadius:"16px",
-              background:"rgba(255,255,255,0.05)",
-              border:"1px solid rgba(255,255,255,0.08)"
-            }}>
-              <h3 style={{marginBottom:"16px"}}>What this does</h3>
-
-              <div style={{opacity:0.7, lineHeight:"1.6"}}>
-                • Real auth system ready<br/>
-                • Protected dashboard<br/>
-                • Upload → process → export pipeline<br/>
-                • Built for real creators, not toy demos
-              </div>
-            </div>
-          </div>
-
+          <button
+            style={{
+              padding: "14px 28px",
+              borderRadius: 8,
+              background: "transparent",
+              border: "1px solid #334155",
+              color: "white",
+              fontSize: 16,
+              cursor: "pointer",
+            }}
+          >
+            Watch Demo
+          </button>
         </div>
+      </section>
 
-      </div>
+      <section
+        style={{
+          maxWidth: 1100,
+          margin: "80px auto 0",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: 20,
+        }}
+      >
+        {[
+          {
+            title: "AI Clip Detection",
+            desc: "Finds the most engaging moments automatically",
+          },
+          {
+            title: "Auto Captions",
+            desc: "Clean, bold captions ready for social",
+          },
+          {
+            title: "Platform Formatting",
+            desc: "Optimized for TikTok, Reels, Shorts",
+          },
+          {
+            title: "One Click Export",
+            desc: "Download finished clips fast",
+          },
+        ].map((f, i) => (
+          <div
+            key={i}
+            style={{
+              padding: 20,
+              borderRadius: 12,
+              background: "#0f172a",
+              border: "1px solid #1e293b",
+            }}
+          >
+            <h3 style={{ fontSize: 18, marginBottom: 10 }}>{f.title}</h3>
+            <p style={{ color: "#94a3b8", fontSize: 14 }}>{f.desc}</p>
+          </div>
+        ))}
+      </section>
+
+      <section
+        style={{
+          maxWidth: 800,
+          margin: "100px auto 0",
+          textAlign: "center",
+        }}
+      >
+        <h2 style={{ fontSize: 32, marginBottom: 20 }}>Stop wasting hours editing.</h2>
+
+        <p style={{ color: "#94a3b8", marginBottom: 30 }}>
+          Creators are scaling faster with automation. You should be too.
+        </p>
+
+        <button
+          style={{
+            padding: "16px 32px",
+            borderRadius: 10,
+            background: "#6366f1",
+            border: "none",
+            color: "white",
+            fontSize: 18,
+            cursor: "pointer",
+          }}
+        >
+          Get Started
+        </button>
+      </section>
     </main>
-  )
+  );
 }
