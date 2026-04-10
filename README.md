@@ -1,20 +1,27 @@
-# VideoClipper Phase 1
+# VideoClipper Phase 1.1
 
-Phase 1 delivers the real app foundation:
-- Next.js app shell
-- Supabase email/password auth
-- protected dashboard route
-- dark glass UI foundation
+This fixes the first Vercel deploy issue by doing three things:
+
+1. Upgrades Next.js to a patched secure version.
+2. Forces the auth-aware pages to render dynamically.
+3. Keeps the real Supabase auth foundation intact.
 
 ## Required environment variables
 
-Use the values from your Supabase project:
-- NEXT_PUBLIC_SUPABASE_URL
-- NEXT_PUBLIC_SUPABASE_ANON_KEY
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
-## Supabase auth setup required
+## Routes
 
-In Supabase Authentication URL settings, add:
-- Site URL: your Vercel production domain
-- Redirect URL: your Vercel production domain/auth/callback
-- For local testing in Vercel preview, add preview URLs later if needed
+- `/`
+- `/auth/login`
+- `/auth/signup`
+- `/dashboard`
+
+## Phase scope
+
+This is still Phase 1 only:
+- real auth
+- protected dashboard
+- premium shell
+- no upload yet
