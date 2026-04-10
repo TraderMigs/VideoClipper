@@ -22,8 +22,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Write file
+        env:
+          FILE_CONTENT: ${{ github.event.inputs.content }}
+          FILE_PATH: ${{ github.event.inputs.file_path }}
         run: |
-          echo "${{ github.event.inputs.content }}" > "${{ github.event.inputs.file_path }}"
+          mkdir -p "$(dirname "$FILE_PATH")"
+          printf "%s" "$FILE_CONTENT" > "$FILE_PATH"
 
       - name: Commit and push
         run: |
