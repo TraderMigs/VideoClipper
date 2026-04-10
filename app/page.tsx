@@ -1,124 +1,227 @@
 export default function Page() {
   return (
-    <main style={{
-      background: "#000000",
-      color: "#ffffff",
-      minHeight: "100vh",
-      fontFamily: "Inter, sans-serif",
-      padding: "60px 20px"
-    }}>
+    <main
+      style={{
+        background: "#000000",
+        color: "#ffffff",
+        minHeight: "100vh",
+        fontFamily:
+          'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        overflowX: "hidden",
+      }}
+    >
+      <section
+        style={{
+          maxWidth: 1220,
+          margin: "0 auto",
+          padding: "28px 20px 120px",
+          position: "relative",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 40,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "70%",
+            height: 260,
+            background:
+              "radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 35%, rgba(255,255,255,0) 72%)",
+            filter: "blur(28px)",
+            pointerEvents: "none",
+          }}
+        />
 
-      <section style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 10,
+            padding: "10px 14px",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 999,
+            background: "rgba(255,255,255,0.03)",
+            boxShadow: "0 0 0 1px rgba(255,255,255,0.02) inset",
+            fontSize: 12,
+            fontWeight: 700,
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            color: "rgba(255,255,255,0.72)",
+            marginBottom: 34,
+          }}
+        >
+          <span
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: 999,
+              background: "#ffffff",
+              boxShadow: "0 0 18px rgba(255,255,255,0.8)",
+            }}
+          />
+          Built for distribution, not editing
+        </div>
 
-        <h1 style={{
-          fontSize: "56px",
-          fontWeight: 800,
-          letterSpacing: "-1px",
-          marginBottom: 20
-        }}>
-          Turn Content Into Distribution Power
+        <h1
+          style={{
+            margin: 0,
+            fontSize: "clamp(48px, 9vw, 110px)",
+            lineHeight: 0.94,
+            letterSpacing: "-0.06em",
+            fontWeight: 800,
+            maxWidth: 1100,
+          }}
+        >
+          Turn one video
+          <br />
+          into a black-box
+          <br />
+          growth machine
         </h1>
 
-        <p style={{
-          fontSize: "20px",
-          opacity: 0.7,
-          maxWidth: 700,
-          margin: "0 auto 40px"
-        }}>
-          One upload becomes a stream of clips designed to spread, get attention, and grow your presence without manual editing.
+        <p
+          style={{
+            margin: "28px 0 0",
+            maxWidth: 760,
+            fontSize: "clamp(20px, 3.6vw, 28px)",
+            lineHeight: 1.35,
+            color: "rgba(255,255,255,0.74)",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Upload once. Clip, caption, format, and multiply your reach without
+          burning hours inside an editor.
         </p>
 
-        <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
-          <button style={{
-            padding: "16px 32px",
-            background: "#ffffff",
-            color: "#000000",
-            border: "none",
-            borderRadius: 10,
-            fontWeight: 700,
-            fontSize: 16,
-            cursor: "pointer"
-          }}>
-            Start Now
+        <div
+          style={{
+            display: "flex",
+            gap: 14,
+            flexWrap: "wrap",
+            marginTop: 34,
+          }}
+        >
+          <button
+            style={{
+              padding: "18px 28px",
+              borderRadius: 16,
+              border: "1px solid rgba(255,255,255,0.18)",
+              background: "#ffffff",
+              color: "#000000",
+              fontWeight: 800,
+              fontSize: 16,
+              letterSpacing: "-0.02em",
+              boxShadow: "0 10px 40px rgba(255,255,255,0.16)",
+              cursor: "pointer",
+            }}
+          >
+            Start Free
           </button>
 
-          <button style={{
-            padding: "16px 32px",
-            background: "transparent",
-            color: "#ffffff",
-            border: "1px solid rgba(255,255,255,0.2)",
-            borderRadius: 10,
-            fontSize: 16,
-            cursor: "pointer"
-          }}>
-            View Demo
+          <button
+            style={{
+              padding: "18px 28px",
+              borderRadius: 16,
+              border: "1px solid rgba(255,255,255,0.12)",
+              background: "rgba(255,255,255,0.03)",
+              color: "#ffffff",
+              fontWeight: 700,
+              fontSize: 16,
+              letterSpacing: "-0.02em",
+              boxShadow: "0 0 0 1px rgba(255,255,255,0.02) inset",
+              cursor: "pointer",
+            }}
+          >
+            Watch Product Demo
           </button>
         </div>
 
-      </section>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.1fr 0.9fr",
+            gap: 22,
+            marginTop: 56,
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              borderRadius: 28,
+              padding: 18,
+              border: "1px solid rgba(255,255,255,0.1)",
+              background:
+                "linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
+              boxShadow:
+                "0 0 0 1px rgba(255,255,255,0.03) inset, 0 30px 80px rgba(0,0,0,0.55)",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                marginBottom: 14,
+              }}
+            >
+              <span
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: 999,
+                  background: "rgba(255,255,255,0.35)",
+                }}
+              />
+              <span
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: 999,
+                  background: "rgba(255,255,255,0.2)",
+                }}
+              />
+              <span
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: 999,
+                  background: "rgba(255,255,255,0.12)",
+                }}
+              />
+            </div>
 
-      <section style={{
-        marginTop: 100,
-        textAlign: "center",
-        opacity: 0.5,
-        fontSize: 14
-      }}>
-        Built for creators serious about growth
-      </section>
-
-      <section style={{
-        maxWidth: 1100,
-        margin: "80px auto 0",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-        gap: 24
-      }}>
-
-        {[ 
-          { title: "Smart Clip Selection", desc: "Finds the moments people actually watch" },
-          { title: "Clean Caption System", desc: "Readable, bold captions without manual work" },
-          { title: "Multi Platform Output", desc: "Formatted instantly for vertical distribution" },
-          { title: "Speed Over Everything", desc: "From upload to export in minutes" }
-        ].map((f, i) => (
-          <div key={i} style={{
-            padding: 24,
-            borderRadius: 14,
-            border: "1px solid rgba(255,255,255,0.08)"
-          }}>
-            <h3 style={{ fontSize: 18, marginBottom: 10 }}>{f.title}</h3>
-            <p style={{ opacity: 0.6, fontSize: 14 }}>{f.desc}</p>
-          </div>
-        ))}
-
-      </section>
-
-      <section style={{
-        maxWidth: 800,
-        margin: "120px auto 0",
-        textAlign: "center"
-      }}>
-        <h2 style={{ fontSize: 36, marginBottom: 20 }}>
-          Editing is a bottleneck. Distribution is leverage.
-        </h2>
-
-        <p style={{ opacity: 0.6, marginBottom: 40 }}>
-          The creators who grow are the ones who publish more, faster, and smarter.
-        </p>
-
-        <button style={{
-          padding: "18px 36px",
-          background: "#ffffff",
-          color: "#000000",
-          border: "none",
-          borderRadius: 12,
-          fontSize: 18,
-          fontWeight: 700,
-          cursor: "pointer"
-        }}>
-          Get Started
-        </button>
-      </section>
-
-    </main>
-  )
-}
+            <div
+              style={{
+                borderRadius: 22,
+                border: "1px solid rgba(255,255,255,0.08)",
+                padding: 20,
+                background:
+                  "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015))",
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1.05fr 0.95fr",
+                  gap: 14,
+                }}
+              >
+                <div
+                  style={{
+                    minHeight: 320,
+                    borderRadius: 20,
+                    position: "relative",
+                    overflow: "hidden",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    background:
+                      "linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "radial-gradient(circle at 30% 20%, rgba
