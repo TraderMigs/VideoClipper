@@ -4,17 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       file_path:
-        description: "File path to update (e.g. app/page.tsx)"
+        description: 'File path to write'
         required: true
       commit_message:
-        description: "Commit message"
+        description: 'Commit message'
         required: true
       content:
-        description: "Full file content"
+        description: 'File content'
         required: true
-
-permissions:
-  contents: write
 
 jobs:
   commit:
@@ -26,12 +23,12 @@ jobs:
 
       - name: Write file
         run: |
-          echo "${{ github.event.inputs.content }}" > ${{ github.event.inputs.file_path }}
+          echo "${{ github.event.inputs.content }}" > "${{ github.event.inputs.file_path }}"
 
-      - name: Commit changes
+      - name: Commit and push
         run: |
-          git config user.name "auto-bot"
-          git config user.email "auto@bot.com"
+          git config user.name "TraderMigs"
+          git config user.email "you@example.com"
           git add .
           git commit -m "${{ github.event.inputs.commit_message }}" || echo "No changes"
           git push
