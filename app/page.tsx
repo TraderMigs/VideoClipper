@@ -55,33 +55,72 @@ export default function Page() {
         }
 
         @keyframes driftA {
-          0% { transform: translate3d(0px, 0px, 0px); }
-          25% { transform: translate3d(10px, -8px, 0px); }
-          50% { transform: translate3d(18px, 4px, 0px); }
-          75% { transform: translate3d(6px, 10px, 0px); }
-          100% { transform: translate3d(0px, 0px, 0px); }
+          0% {
+            transform: translate3d(0px, 0px, 0px);
+          }
+          20% {
+            transform: translate3d(70px, -12px, 0px);
+          }
+          45% {
+            transform: translate3d(122px, 12px, 0px);
+          }
+          70% {
+            transform: translate3d(58px, 26px, 0px);
+          }
+          100% {
+            transform: translate3d(0px, 0px, 0px);
+          }
         }
 
         @keyframes driftB {
-          0% { transform: translate3d(0px, 0px, 0px); }
-          25% { transform: translate3d(-12px, 8px, 0px); }
-          50% { transform: translate3d(-20px, -4px, 0px); }
-          75% { transform: translate3d(-8px, -10px, 0px); }
-          100% { transform: translate3d(0px, 0px, 0px); }
+          0% {
+            transform: translate3d(0px, 0px, 0px);
+          }
+          18% {
+            transform: translate3d(-42px, 18px, 0px);
+          }
+          42% {
+            transform: translate3d(66px, -16px, 0px);
+          }
+          72% {
+            transform: translate3d(126px, 10px, 0px);
+          }
+          100% {
+            transform: translate3d(0px, 0px, 0px);
+          }
         }
 
         @keyframes driftC {
-          0% { transform: translate3d(0px, 0px, 0px); }
-          25% { transform: translate3d(8px, 10px, 0px); }
-          50% { transform: translate3d(-10px, 0px, 0px); }
-          75% { transform: translate3d(14px, -8px, 0px); }
-          100% { transform: translate3d(0px, 0px, 0px); }
+          0% {
+            transform: translate3d(0px, 0px, 0px);
+          }
+          22% {
+            transform: translate3d(88px, 20px, 0px);
+          }
+          50% {
+            transform: translate3d(142px, -10px, 0px);
+          }
+          78% {
+            transform: translate3d(36px, -24px, 0px);
+          }
+          100% {
+            transform: translate3d(0px, 0px, 0px);
+          }
         }
 
         @keyframes pulseGlow {
-          0% { opacity: 0.28; filter: blur(36px); }
-          50% { opacity: 0.42; filter: blur(54px); }
-          100% { opacity: 0.28; filter: blur(36px); }
+          0% {
+            opacity: 0.24;
+            filter: blur(34px);
+          }
+          50% {
+            opacity: 0.42;
+            filter: blur(56px);
+          }
+          100% {
+            opacity: 0.24;
+            filter: blur(34px);
+          }
         }
 
         .hero-card {
@@ -100,11 +139,12 @@ export default function Page() {
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.08),
             0 24px 60px rgba(0, 0, 0, 0.7),
-            0 0 40px rgba(139, 92, 246, 0.08);
+            0 0 40px rgba(139, 92, 246, 0.1);
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
+          will-change: transform;
         }
 
         .hero-card-word {
@@ -115,21 +155,21 @@ export default function Page() {
         }
 
         .card-a {
-          top: 6px;
-          left: 14px;
-          animation: driftA 15s ease-in-out infinite;
+          top: 8px;
+          left: 8px;
+          animation: driftA 8.5s ease-in-out infinite alternate;
         }
 
         .card-b {
-          top: 72px;
-          left: 118px;
-          animation: driftB 17s ease-in-out infinite;
+          top: 78px;
+          left: 112px;
+          animation: driftB 7.2s ease-in-out infinite alternate;
         }
 
         .card-c {
-          top: 152px;
+          top: 162px;
           left: 34px;
-          animation: driftC 19s ease-in-out infinite;
+          animation: driftC 9s ease-in-out infinite alternate;
         }
 
         @media (max-width: 520px) {
@@ -145,16 +185,16 @@ export default function Page() {
 
           .card-a {
             top: 10px;
-            left: 2px;
+            left: 4px;
           }
 
           .card-b {
-            top: 70px;
-            left: 88px;
+            top: 74px;
+            left: 92px;
           }
 
           .card-c {
-            top: 142px;
+            top: 150px;
             left: 18px;
           }
         }
@@ -174,8 +214,8 @@ export default function Page() {
             top: 110,
             left: "50%",
             transform: "translateX(-50%)",
-            width: 320,
-            height: 320,
+            width: 360,
+            height: 360,
             borderRadius: "50%",
             background:
               "radial-gradient(circle, rgba(91,33,182,0.55) 0%, rgba(91,33,182,0.22) 34%, rgba(91,33,182,0.02) 72%, rgba(0,0,0,0) 100%)",
@@ -246,7 +286,7 @@ export default function Page() {
           style={{
             position: "relative",
             zIndex: 1,
-            height: 340,
+            height: 350,
             marginTop: 36,
             marginBottom: 34,
           }}
