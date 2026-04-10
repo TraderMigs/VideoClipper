@@ -1,4 +1,4 @@
-exporexport default function Page() {
+export default function Page() {
   return (
     <main
       style={{
@@ -645,4 +645,4 @@ exporexport default function Page() {
       </section>
     </main>
   );
-                        }
+}
