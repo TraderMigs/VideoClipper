@@ -11,49 +11,88 @@ export default function Page() {
       }}
     >
       {/* HERO */}
-      <section style={{ padding: "28px 18px 60px", maxWidth: 520, margin: "0 auto" }}>
+      <section style={{ padding: "28px 20px 80px", maxWidth: 560, margin: "0 auto" }}>
         <div
           style={{
             display: "inline-block",
             padding: "8px 14px",
             borderRadius: 999,
-            border: "1px solid rgba(255,255,255,0.12)",
+            border: "1px solid rgba(255,255,255,0.15)",
             background: "rgba(255,255,255,0.04)",
             fontSize: 11,
-            letterSpacing: "0.12em",
+            letterSpacing: "0.14em",
             textTransform: "uppercase",
             marginBottom: 22,
           }}
         >
-          Content engine
+          Distribution Engine
         </div>
 
         <h1
           style={{
-            fontSize: 44,
+            fontSize: 46,
             lineHeight: 1.05,
-            letterSpacing: "-0.04em",
+            letterSpacing: "-0.05em",
             margin: 0,
             fontWeight: 800,
           }}
         >
-          One video.
+          One input.
           <br />
-          Infinite content.
+          Infinite reach.
         </h1>
 
         <p
           style={{
-            marginTop: 18,
+            marginTop: 16,
             fontSize: 18,
             lineHeight: 1.5,
             color: "rgba(255,255,255,0.7)",
           }}
         >
-          Turn raw footage into high-performing clips without wasting hours editing.
+          Turn raw video into a distribution machine.
         </p>
 
-        <div style={{ marginTop: 26, display: "flex", flexDirection: "column", gap: 12 }}>
+        {/* FLOATING VISUAL */}
+        <div
+          style={{
+            position: "relative",
+            height: 260,
+            marginTop: 40,
+          }}
+        >
+          {[
+            { text: "Hook", top: 0, left: 10 },
+            { text: "Caption", top: 60, left: 60 },
+            { text: "Vertical", top: 120, left: 20 },
+          ].map((card, i) => (
+            <div
+              key={i}
+              style={{
+                position: "absolute",
+                top: card.top,
+                left: card.left,
+                width: 140,
+                height: 90,
+                borderRadius: 18,
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                backdropFilter: "blur(16px)",
+                boxShadow:
+                  "0 20px 60px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,255,255,0.06)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 600,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              {card.text}
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: 30, display: "flex", flexDirection: "column", gap: 12 }}>
           <button
             style={{
               padding: "16px",
@@ -72,8 +111,8 @@ export default function Page() {
               padding: "16px",
               borderRadius: 14,
               background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.2)",
               color: "#fff",
-              border: "1px solid rgba(255,255,255,0.12)",
             }}
           >
             Watch Demo
@@ -81,120 +120,56 @@ export default function Page() {
         </div>
       </section>
 
-      {/* FLOATING CARDS */}
-      <section style={{ padding: "10px 18px 70px", maxWidth: 520, margin: "0 auto" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {["Hook clip", "Caption clip", "Platform cut"].map((text, i) => (
-            <div
-              key={i}
-              style={{
-                padding: "22px",
-                borderRadius: 20,
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                backdropFilter: "blur(12px)",
-                boxShadow: "0 10px 40px rgba(0,0,0,0.6)",
-                transform: `translateY(${i * 6}px)`,
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 12,
-                  opacity: 0.5,
-                  marginBottom: 6,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                }}
-              >
-                Output {i + 1}
-              </div>
-
-              <div style={{ fontSize: 22, fontWeight: 700 }}>{text}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* PROBLEM */}
-      <section style={{ padding: "0 18px 70px", maxWidth: 520, margin: "0 auto" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          {[
-            "Editing eats your time",
-            "Content dies after one post",
-            "You’re not showing up enough",
-          ].map((text, i) => (
-            <div
-              key={i}
-              style={{
-                padding: "18px",
-                borderRadius: 16,
-                border: "1px solid rgba(255,255,255,0.08)",
-                background: "rgba(255,255,255,0.02)",
-              }}
-            >
-              {text}
-            </div>
-          ))}
-        </div>
+      <section style={{ padding: "0 20px 80px", maxWidth: 560, margin: "0 auto" }}>
+        {[
+          "Editing slows you down",
+          "Content gets used once",
+          "You’re invisible most days",
+        ].map((text, i) => (
+          <div
+            key={i}
+            style={{
+              marginBottom: 12,
+              padding: 18,
+              borderRadius: 16,
+              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(255,255,255,0.02)",
+            }}
+          >
+            {text}
+          </div>
+        ))}
       </section>
 
       {/* TRANSFORMATION */}
-      <section style={{ padding: "0 18px 80px", maxWidth: 520, margin: "0 auto" }}>
+      <section style={{ padding: "0 20px 100px", maxWidth: 560, margin: "0 auto" }}>
         <div
           style={{
-            padding: 24,
+            padding: 26,
             borderRadius: 24,
-            border: "1px solid rgba(255,255,255,0.12)",
-            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.15)",
+            background: "rgba(255,255,255,0.05)",
             textAlign: "center",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.7)",
           }}
         >
           <h2 style={{ margin: 0, fontSize: 28, lineHeight: 1.2 }}>
             Record once.
             <br />
-            Publish everywhere.
+            Distribute forever.
           </h2>
-
-          <p style={{ marginTop: 14, color: "rgba(255,255,255,0.7)" }}>
-            One input becomes multiple outputs ready for distribution.
-          </p>
-        </div>
-      </section>
-
-      {/* WHY */}
-      <section style={{ padding: "0 18px 80px", maxWidth: 520, margin: "0 auto" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {[
-            ["Speed", "Go from raw to ready in minutes"],
-            ["Scale", "Multiply every piece of content"],
-            ["Consistency", "Show up daily without burnout"],
-          ].map(([title, desc], i) => (
-            <div
-              key={i}
-              style={{
-                padding: "20px",
-                borderRadius: 18,
-                border: "1px solid rgba(255,255,255,0.1)",
-                background: "rgba(255,255,255,0.03)",
-              }}
-            >
-              <div style={{ fontWeight: 700, marginBottom: 6 }}>{title}</div>
-              <div style={{ fontSize: 14, color: "rgba(255,255,255,0.6)" }}>
-                {desc}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section style={{ padding: "0 18px 100px", maxWidth: 520, margin: "0 auto" }}>
+      <section style={{ padding: "0 20px 120px", maxWidth: 560, margin: "0 auto" }}>
         <div
           style={{
-            padding: 26,
+            padding: 28,
             borderRadius: 26,
-            border: "1px solid rgba(255,255,255,0.12)",
-            background: "rgba(255,255,255,0.05)",
+            border: "1px solid rgba(255,255,255,0.15)",
+            background: "rgba(255,255,255,0.06)",
             textAlign: "center",
           }}
         >
@@ -215,15 +190,15 @@ export default function Page() {
                 border: "none",
               }}
             >
-              Start Now
+              Get Started
             </button>
 
             <button
               style={{
                 padding: "16px",
                 borderRadius: 14,
-                background: "transparent",
                 border: "1px solid rgba(255,255,255,0.2)",
+                background: "transparent",
                 color: "#fff",
               }}
             >
